@@ -1,5 +1,11 @@
+@font-face {
+  font-family: Karla-Regular;
+  src: url(./assets/fonts/static/Karla-Regular.ttf);
+}
+
 body {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Karla-Regular", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
   background-color: hsl(168, 8%, 88%);
 }
 * {
@@ -17,6 +23,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 h3 {
+  font-family: Karla-Regular;
   margin: 10px 0;
 }
 .fullNameDiv {
@@ -48,13 +55,13 @@ input {
   justify-content: space-between;
   margin-top: 10px;
 }
-.queryTypeDiv div{
+.queryTypeDiv div {
   border: 1px solid rgb(201, 196, 196);
   width: 45%;
   padding: 7px;
   border-radius: 10px;
 }
-.queryTypeDiv div input{
+.queryTypeDiv div input {
   width: 20px;
   margin-right: 15px;
 }
@@ -83,49 +90,69 @@ button {
   border: none;
   font-size: 1rem;
 }
-.policySection{
+.policySection {
   margin: 20px 0;
 }
-.policySection label{
+.policySection label {
   display: flex;
 }
-.policySection label input{
+.policySection label input {
   width: 15px;
   margin-right: 15px;
   margin-left: 5px;
 }
 
-.error-message {  
-  color: red;  
-  font-size: 0.9em;  
-}  
+.error-message {
+  color: red;
+  font-size: 0.9em;
+}
 
-.form-message {  
+.form-message {
   display: none;
   width: 250px;
   padding: 10px;
   border-radius: 10px;
-font-size: 1rem;
-  margin: 15px auto ;  
-  color: #fff;  
-  text-align: center;  
+  font-size: 1rem;
+  margin: 15px auto;
+  color: #fff;
+  text-align: center;
   background-color: #201f1f;
-  text-align: center;  
+  text-align: center;
   position: fixed; /* یا position: absolute; */
   top: 20px; /* فاصله از بالا */
   left: 50%; /* قرارگیری در وسط افقی */
   transform: translateX(-50%); /* جابجایی برای مرکز شدن */
   z-index: 1000; /* اطمینان از نمایش در بالای سایر عناصر */
-} 
+}
 
-input:focus, textarea:focus, button:focus {  
-  outline: 2px solid hsl(90, 100%, 40%);  
-}  
+input:focus,
+textarea:focus,
+button:focus {
+  outline: 2px solid hsl(90, 100%, 40%);
+}
 
-button:hover {  
-  background-color: #45a30e; /* رنگ تغییر یافته برای حالت hover */  
-}  
+button:hover {
+  background-color: #45a30e; /* رنگ تغییر یافته برای حالت hover */
+}
 
-input:hover, textarea:hover {  
-  border-color: hsl(90, 100%, 40%);  
-} 
+input:hover,
+textarea:hover {
+  border-color: hsl(90, 100%, 40%);
+}
+
+@media (max-width: 350px) {
+  .container {
+    width: 90%;
+    margin: 10px auto;
+  }
+  .fullNameDiv {
+    display: block;
+  }
+  .queryTypeDiv {
+    display: block;
+  }
+  .queryTypeDiv div {
+    width: 100%;
+    margin-bottom: 7px;
+  }
+}
