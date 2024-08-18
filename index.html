@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>contactUs-form</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h3>Contact Us</h3>
+      <form id="contact-form" action="#" method="post">
+        <div class="fullNameDiv">
+          <div class="section-name">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" required />
+          </div>
+          <div class="section-lastName">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" required />
+          </div>
+        </div>
+        <div class="emailSection">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="querySection">
+          <label for="request">Query Type</label>
+          <div class="queryTypeDiv">
+            <div>
+              <label for="">
+                <input type="radio" name="queryType" value="GeneralEnquiry" />
+                General Enquiry
+              </label>
+            </div>
+            <div>
+              <label for="">
+                <input type="radio" name="queryType" value="SupportRequest" />
+                Support Request
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="descriptionSection">
+          <label for="description">Message</label>
+          <textarea id="description" rows="4" required></textarea>
+        </div>
+        <button type="submit">submit</button>
+        <div class="policySection">
+          <label for=""><input type="checkbox" />ehsan</label>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

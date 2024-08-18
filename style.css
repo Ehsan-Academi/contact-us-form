@@ -1,0 +1,94 @@
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: hsl(170, 5%, 79%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 450px;
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 10px;
+  margin: 90px auto;
+  padding: 20px;
+  background-color: hsl(0, 0%, 100%);
+}
+h3 {
+  margin: 10px 0;
+}
+.fullNameDiv {
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  gap: 8px;
+}
+input {
+  padding: 5px;
+  border-radius: 7px;
+  border: 1px solid rgb(201, 196, 196);
+  width: 100%;
+}
+.emailSection {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+.querySection {
+  /* display: flex; */
+}
+/* .querySection label:first-child {
+  margin-top: 50px;
+} */
+.queryTypeDiv {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.queryTypeDiv div{
+  border: 1px solid rgb(201, 196, 196);
+  width: 45%;
+  padding: 7px;
+  border-radius: 10px;
+}
+.queryTypeDiv div input{
+  width: 20px;
+  margin-right: 15px;
+}
+.queryTypeDiv div label {
+  display: flex;
+}
+.descriptionSection {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+.descriptionSection label {
+  margin-bottom: 7px;
+}
+.descriptionSection textarea {
+  border-radius: 7px;
+  border: 1px solid rgb(201, 196, 196);
+}
+button {
+  width: 100%;
+  background-color: #52a51b;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+}
+.policySection{
+  margin-top: 20px;
+}
+.policySection label{
+  display: flex;
+}
+.policySection label input{
+  width: 15px;
+  margin-right: 15px;
+  margin-left: 5px;
+}
