@@ -1,35 +1,69 @@
-// <!-- Contact Us
+// برای جلوگیری از چسباندن محتوا در فیلدهای ورودی
+document.addEventListener("DOMContentLoaded", () => {
+  const inputs = document.querySelectorAll("input, textarea"); // انتخاب همه فیلدهای ورودی و textarea
 
-// First Name
-// This field is required
+  inputs.forEach((input) => {
+    // جلوگیری از چسباندن محتوا
+    input.addEventListener("paste", (event) => {
+      event.preventDefault(); // جلوگیری از عملیات paste
+    });
 
-// Last Name
-// This field is required
+    // جلوگیری از تغییرات پیش‌فرض (در صورتی که بخواهید)
+    input.addEventListener("input", (event) => {
+      if (input.value === "") {
+        input.value = ""; // جلوگیری از تغییر به مقادیر پیش‌فرض
+      }
+    });
+  });
+});
 
-// Email Address
-// Please enter a valid email address
-// This field is required
+const formHandler = (event) => {
+  event.preventDefault();
 
-// Query Type
-// General Enquiry
-// Support Request
-// Please select a query type
+  //clear previous error Message
+  document.getElementById("form-message").textContent = "";
+  document.getElementById("description-error").textContent = "";
+  document.getElementById("email-error").textContent = "";
 
-// Message
-// This field is required
+  let validation = true;
+  //   let error=[];
 
-// I consent to being contacted by the team
-// To submit this form, please consent to being contacted
+  //email validation
+  const emailField = document.getElementById("email");
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emailPattern.test(emailField.value)) {
+    document.getElementById("email-error").textContent =
+      "Please Enter a valid email";
+    validation = false;
+  }
 
-// Submit
+  //description validation
+  const descriptionField = document.getElementById("description");
+  if (descriptionField.value.trim().length === 0) {
+    document.getElementById("description-error").textContent =
+      "Please enter a message";
+    validation = false;
+  }
 
-// Message Sent!
-// Thanks for completing the form. We'll be in touch soon! -->
-// <style>
-//       .attribution {
-//         font-size: 11px;
-//         text-align: center;
-//       }
-//       .attribution a {
-//         color: hsl(228, 45%, 44%);
-//       }
+  const policyCheckbox = document.querySelector('input[type="checkbox"]');
+  if (!policyCheckbox.checked) {
+    alert("لطفاً شرایط را تایید کنید.");
+    return; // یا، یک خطای جدید بیان کنید.
+  }
+
+  // if validation is true
+  if (validation) {
+    const formMessage = document.getElementById("form-message");
+
+    formMessage.style.display = "block";
+    formMessage.innerText = "اطلاعات با موفقیت ارسال شد";
+    document.getElementById("contact-form").reset();
+
+    // Hide the form message after 3 seconds
+    setTimeout(() => {
+      formMessage.style.display = "none";
+    }, 3000);
+  }
+};
+
+document.getElementById("contact-form").addEventListener("submit", formHandler);
